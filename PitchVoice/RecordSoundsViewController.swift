@@ -8,16 +8,28 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RecordSoundsViewController: UIViewController {
 
     @IBOutlet weak var RecordingLabel: UILabel!
     @IBOutlet weak var StopRecordingButton: UIButton!
     @IBOutlet weak var RecordingVoiceButton: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        StopRecordingButton.isEnabled=false
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    
+
     @IBAction func RecordVoiceButton(_ sender: Any) {
         print("oh,start!")
         StopRecordingButton.isEnabled=true
         RecordingVoiceButton.isEnabled=false
         RecordingLabel.text="Recording..."
+        StopRecordingButton.backgroundColor = #colorLiteral(red: 0.9230708214, green: 0.9230708214, blue: 0.9230708214, alpha: 1)
+        RecordingVoiceButton.backgroundColor = #colorLiteral(red: 0.7934966634, green: 0.7934966634, blue: 0.7934966634, alpha: 1)
+        RecordingLabel.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
     }
     
     
@@ -25,13 +37,10 @@ class ViewController: UIViewController {
         print("oh,stop!")
         StopRecordingButton.isEnabled=false
         RecordingVoiceButton.isEnabled=true
-        
+        StopRecordingButton.backgroundColor = #colorLiteral(red: 0.7934966634, green: 0.7934966634, blue: 0.7934966634, alpha: 1)
+        RecordingVoiceButton.backgroundColor = #colorLiteral(red: 0.9230708214, green: 0.9230708214, blue: 0.9230708214, alpha: 1)
+        RecordingLabel.backgroundColor = #colorLiteral(red: 0.4078193307, green: 0.4078193307, blue: 0.4078193307, alpha: 1)
         RecordingLabel.text="Tap to Record Voice ⬆️" 
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
 
